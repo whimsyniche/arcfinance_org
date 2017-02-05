@@ -33,7 +33,7 @@ jQuery(document).ready(function() {
         jQuery('.post-type-archive-learn #publication_type').prop('selectedIndex', 0);
         var strSelect = "";
         strSelect = jQuery(".post-type-archive-learn #country option:selected").text();
-        strSelect = strSelect.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+        strSelect = strSelect.replace(/[^a-z0-9\s]/gi, '').replace(/[\s]/g, '_'); //strip whitespaces, add underscore
         if (strSelect == "Country") {
             jQuery(".post-type-archive-learn .learnPosts").show("slow");
         } else {
@@ -99,7 +99,7 @@ jQuery(document).ready(function() {
         jQuery('.post-type-archive-learn #publication_type').prop('selectedIndex', 0);
         var strSelect = "";
         strSelect = jQuery(".post-type-archive-learn #technology option:selected").text();
-        strSelect = strSelect.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '');
+        strSelect = strSelect.replace(/[^a-z0-9\s]/gi, '').replace(/[\s]/g, '_'); //strip whitespaces, add underscore
         jQuery(".post-type-archive-learn .learnPosts .tag-cloud .categories.countries .selcountry").show();
         jQuery(".post-type-archive-learn .learnPosts .tag-cloud .categories.countries .zpt").show();
         if (strSelect == "Technology") {
