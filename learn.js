@@ -1,8 +1,5 @@
 jQuery(document).ready(function() {
     jQuery(".post-type-archive-learn .learnPosts").each(function() {
-        //var index = jQuery(this).index();
-        //alert(index);
-        //var myArray = [];
         var categoryClasses = [];
         jQuery(this).find(".categories a").each(function() {
             strClass = jQuery(this).text();
@@ -10,14 +7,8 @@ jQuery(document).ready(function() {
             if (jQuery(this).hasClass('selcountry')) {
                 strClass = 'country_' + strClass;
             }
-            //myArray.push(strClass);
             categoryClasses.push(strClass);
         });
-        /*function addClassToDiv(elem) {
-            //jQuery(".post-type-archive-learn .learnPosts").eq(index).addClass(elem);
-          jQuery(this).addClass(elem);
-        }
-        myArray.forEach(addClassToDiv);*/
         jQuery(this).addClass(categoryClasses.join(' '));
     });
     //display results or hide results
@@ -44,15 +35,10 @@ jQuery(document).ready(function() {
             strSelectClass = ".country_" + strSelect;
             jQuery(".post-type-archive-learn .learnPosts").hide();
             jQuery(".post-type-archive-learn .learnPosts .tag-cloud .categories.countries .selcountry").hide();
-            jQuery(".post-type-archive-learn .learnPosts .tag-cloud .categories.countries .zpt").hide();
-            //jQuery(".post-type-archive-learn .learnPosts .tag-cloud .categories.countries .selcountry"+ strSelectClass).show();
-            //jQuery(".post-type-archive-learn .learnPosts .tag-cloud .categories.countries .selcountry.Global").show();
-            //jQuery(strSelectClass).show("slow");
+            jQuery(".post-type-archive-learn .learnPosts .tag-cloud .categories.countries .zpt").hide()
             jQuery(".post-type-archive-learn .learnPosts .tag-cloud .categories.countries .selcountry" + strSelectClass).each(function() {
                 jQuery(this).show();
-                //jQuery(this).find(".selcountry.country_Global").show();
                 parentClasses = jQuery(this).parent().parent().parent().parent().attr('class');
-                //alert(parentClasses);
                 jQuery(this).parent().parent().parent().parent().show();
             });
         }
@@ -103,7 +89,6 @@ jQuery(document).ready(function() {
         jQuery('.post-type-archive-learn #publication_type').prop('selectedIndex', 0);
         var strSelect = "";
         strSelect = jQuery(".post-type-archive-learn #technology option:selected").text();
-        //strSelect = strSelect.replace(/[^a-z0-9\s]/gi, '').replace(/[\s]/g, '_');
         strSelect = strSelect.replace(/[^a-zA-Z0-9]/g, '')
         jQuery(".post-type-archive-learn .learnPosts .tag-cloud .categories.countries .selcountry").show();
         jQuery(".post-type-archive-learn .learnPosts .tag-cloud .categories.countries .zpt").show();
