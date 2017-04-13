@@ -1,2 +1,2 @@
 # arcfinance_org
-troubleshooting jQuery issue of existing site.
+Fixed issues in: jQuery, jvectormap and include jvectormap css, and PHP.
